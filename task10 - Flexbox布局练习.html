@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task10 - Flex布局练习</title>
+    <style>
+        .wrap{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .wrap div {
+            width: 150px;
+            padding:20px;
+            border: 1px solid red;
+        }
+        .wrap :nth-child(4){
+            border: 1px solid #0f0;
+        }
+        .div1{
+            height: 120px;
+        }
+        .div2{
+            height: 100px;
+        }
+        .div3{
+            height: 40px;
+        }
+        .div4{
+            height: 200px;
+        }
+        @media (min-width:640px){
+            .wrap div{ 
+                align-items: center;
+            }
+           
+        }
+        @media (max-width: 640px){
+            .wrap div{
+                align-items: flex-start;
+            }
+            .div4{
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task8 - 响应式网格布局</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            padding: 0 20px 20px 0;
+            width: 100%;
+            display: grid;
+        }
+
+        .row {
+            clear: both;
+        }
+
+        [class^='div'] {
+            background-color: #eee;
+            height: 50px;
+            margin: 20px 0 0 20px;
+            border: 1px solid #999;
+            float: left;
+        }
+
+        @media screen and (min-width: 768px) {
+            .div4 {
+                width: calc(33.333% - 20px);
+            }
+            .div3 {
+                width: calc(25% - 20px);
+            }
+            .div6 {
+                width: calc(50% - 20px);
+            }
+            .div1 {
+                width: calc(8.333% - 20px);
+            }
+            .div2 {
+                width: calc(16.666% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .min6 {
+                width: calc(50% - 20px);
+            }
+            .min12{
+                width: calc(100% - 20px);
+            }
+            .div3 {
+                width: calc(25% - 20px);
+            }
+            .div6 {
+                width: calc(50% - 20px);
+            }
+            .min2{
+                width: calc(16.6667% - 20px);
+            }
+            .min8{
+                width: calc(66.6667% - 20px);
+            }
+            .min3{
+                width: calc(25% - 20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="row">
+            <div class="div4 min6"></div>
+            <div class="div4 min6"></div>
+            <div class="div4 min12"></div>
+        </div>
+        <div class="row">
+            <div class="div3"></div>
+            <div class="div6"></div>
+            <div class="div3"></div>
+        </div>
+        <div class="row">
+            <div class="div1 min2"></div>
+            <div class="div1 min2"></div>
+            <div class="div2 min8"></div>
+            <div class="div2 min3"></div>
+            <div class="div6 min3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
